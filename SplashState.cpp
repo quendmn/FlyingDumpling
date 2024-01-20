@@ -1,9 +1,7 @@
-#pragma once
-
 #include <sstream>
 #include "SplashState.hpp"
 #include "DEFINITIONS.hpp"
-
+#include "MainMenuState.hpp"
 #include <iostream>
 
 namespace Dumpling
@@ -40,7 +38,7 @@ namespace Dumpling
 	{
 		if (this->clock_.getElapsedTime().asSeconds() > SPLASH_STATE_SHOW_TIME)
 		{
-			std::cout << "exit" << std::endl;
+			data_->machine.AddState(StateRef(new MainMenuState(data_)), true); //переход в главное меню
 		}
 	}
 

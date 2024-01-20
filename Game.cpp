@@ -4,6 +4,7 @@
 
 namespace Dumpling
 {
+	//создание окна
 	Game::Game(int width, int height, std::string title)
 	{
 		data_->window.create(sf::VideoMode(width, height), title, sf::Style::Close | sf::Style::Titlebar);

@@ -1,10 +1,21 @@
 #pragma once
 
-#define SCREEN_WIDTH 900 // ширина экрана
-#define SCREEN_HEIGHT 600 // высота экрана
-#define SPLASH_STATE_SHOW_TIME 3.0 // время показа заставки
-#define SPLASH_SCENE_BACKGROUND_FILEPATH "Resources/res/Splash Background.png" // путь заставки
-#define ICON_FILEPATH "Resources/res/Icon.png" // путь иконки
-#define MAIN_MENU_BACKGROUND_FILEPATH "Resourse/res/Main Menu Background.png" // главное меню
-#define MAIN_MENU_TITLE_FILEPATH "Resourse/res/Main Menu Title.png" 
-#define PLAY_BUTTON_FILEPATH "Resourse/res/PlayButton.png"
+#define SCREEN_WIDTH 1000 // ширина экрана
+#define SCREEN_HEIGHT 700 // высота экрана
+
+#define SPLASH_STATE_SHOW_TIME 1.5 // время показа заставки
+#define SPLASH_SCENE_BACKGROUND_FILEPATH "Resources/res/SplashBackground.png" // заставка
+#define ICON_FILEPATH "Resources/res/Icon.png" // иконка
+
+#define MAIN_MENU_BACKGROUND_FILEPATH "Resources/res/MainMenuBackground.png" // главное меню
+#define GAME_TITLE_FILEPATH "Resources/res/Title.png" // название
+#define PLAY_BUTTON_FILEPATH "Resources/res/PlayButton.png" // кнопка играть
+
+#define GAME_BACKGROUND_FILEPATH "Resources/res/GameBackground.png" // фон игры
+#define GAME_OVER_BACKGROUND_FILEPATH "Resources/res/GameBackground.png" // фон конца игры
+
+#define FORK_UP_FILEPATH "Resources/res/ForkUp.png"// вилка вверх
+#define FORK_DOWN_FILEPATH "Resources/res/ForkDown.png" // вилка вниз
+
+#define FORK_MOVEMENT_SPEED 180.0f
+#define FORK_SPAWN_FREQUENCY 2.0f
