@@ -1,42 +1,37 @@
 #pragma once
+
 #include <memory>
 #include <string>
 #include <SFML/Graphics.hpp>
 #include "StateMachine.hpp"
 #include "AssetManager.hpp"
-#include "InputManager.hpp"
 
-
-namespace Pelmen {
-
+namespace Dumpling
+{
 	struct GameData
 	{
-		
 		StateMachine machine;
-
-		//окно рендеринга
 		sf::RenderWindow window;
-
-		// менеджер текстур
 		AssetManager assets;
-
-		// менеджер ввода
-		InputManager input; 
 	};
 
-	typedef std::shared_ptr<GameData> GameDataRef; // для доступа к полям
-	
+	typedef std::shared_ptr<GameData> GameDataRef;
 
-	class Game {
+	class Game
+	{
 	public:
-		Game(int width, int heigth, std::string title);
+
+		//для работы с окном
+		Game(int width, int height, std::string title);
 
 	private:
-		const float dt = 1.0f / 60.0f; // частота кадров
-		sf::Clock clock_; // для управления частотой кадров
-		GameDataRef data_ = std::make_shared<GameData>(); // ссылка для доступа к игровым данным
+		// обновление кадра 
+		const float dt = 1.0f / 60.0f;
+		sf::Clock clock_;
+		sf::Image icon_;
+
+		GameDataRef data_ = std::make_shared<GameData>();
 
 		void Run();
-
 	};
 }

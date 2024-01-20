@@ -1,7 +1,8 @@
 #pragma once
-#include <SFML/Graphics.hpp>
 
-namespace Pelmen
+#include "SFML\Graphics.hpp"
+
+namespace Dumpling
 {
 	class InputManager
 	{
@@ -9,11 +10,9 @@ namespace Pelmen
 		InputManager() {}
 		~InputManager() {}
 
-		//нажат ли спрайт
-		bool isSpriteClicked(sf::Sprite object, sf::Mouse::Button button, sf::RenderWindow& window);
+		// обработка клика по спрайту
+		bool IsSpriteClicked(sf::Sprite object, sf::Mouse::Button button, sf::RenderWindow& window);
 
-		//узнать позицию мышки
 		sf::Vector2i GetMousePosition(sf::RenderWindow& window);
-
 	};
 }

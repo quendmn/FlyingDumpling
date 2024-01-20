@@ -1,24 +1,28 @@
 #pragma once
+
 #include <map>
 #include <SFML/Graphics.hpp>
 
-namespace Pelmen {
-
-	class AssetManager {
+namespace Dumpling
+{
+	class AssetManager
+	{
 	public:
-		AssetManager() {}
-		~AssetManager() {}
 
-		// загрузить текстуру
+		AssetManager() { }
+		~AssetManager() { }
+		
+		//работа с текстурами
 		void LoadTexture(std::string name, std::string fileName);
 		sf::Texture& GetTexture(std::string name);
 
-		// загрузить шрифт
+		//работа со шрифтами
 		void LoadFont(std::string name, std::string fileName);
-		sf::Font &GetFont(std::string name);
+		sf::Font& GetFont(std::string name);
 
 	private:
-		// для хранения текстур и шрифтов вместе с их названиями
+		
+		//хранение
 		std::map<std::string, sf::Texture> textures_;
 		std::map<std::string, sf::Font> fonts_;
 	};

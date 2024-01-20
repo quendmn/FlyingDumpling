@@ -1,19 +1,21 @@
 #pragma once
-
 #include <memory>
 #include <stack>
 #include "State.hpp"
 
-namespace Pelmen {
+namespace Dumpling
+{
 	typedef std::unique_ptr<State> StateRef;
-	
-	class StateMachine {
+
+	class StateMachine
+	{
 	public:
-		StateMachine() {}
-		~StateMachine() {}
-		
+		StateMachine() { }
+		~StateMachine() { }
+
 		void AddState(StateRef newState, bool isReplacing = true);
 		void RemoveState();
+		
 		void ProcessStateChanges();
 
 		StateRef& GetActiveState();
@@ -23,7 +25,6 @@ namespace Pelmen {
 		StateRef newState_;
 
 		bool isRemoving_;
-		bool isAdding_;
-		bool isReplacing_;
+		bool isAdding_, isReplacing_;
 	};
 }
