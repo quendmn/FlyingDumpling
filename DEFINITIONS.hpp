@@ -17,5 +17,8 @@
 #define FORK_UP_FILEPATH "Resources/res/ForkUp.png"// вилка вверх
 #define FORK_DOWN_FILEPATH "Resources/res/ForkDown.png" // вилка вниз
 
-#define FORK_MOVEMENT_SPEED 180.0f
-#define FORK_SPAWN_FREQUENCY 2.0f
+#define FORK_MOVEMENT_SPEED 180.0f // скорость движени€
+#define FORK_SPAWN_FREQUENCY 2.0f // скорость по€влени€
+
+#define LAND_FILEPATH "Resources/res/Land.png" // нижн€€ часть экрана игры
+

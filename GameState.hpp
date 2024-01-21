@@ -4,6 +4,7 @@
 #include "State.hpp"
 #include "Game.hpp"
 #include "Fork.hpp"
+#include "Land.hpp"
 
 namespace Dumpling
 {
@@ -26,5 +27,8 @@ namespace Dumpling
 		sf::Clock clock_;
 
 		Fork* fork;
+
+		Land* land;
+
 	};
 }
