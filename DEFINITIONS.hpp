@@ -16,9 +16,24 @@
 
 #define FORK_UP_FILEPATH "Resources/res/ForkUp.png"// вилка вверх
 #define FORK_DOWN_FILEPATH "Resources/res/ForkDown.png" // вилка вниз
-
-#define FORK_MOVEMENT_SPEED 180.0f // скорость движения
-#define FORK_SPAWN_FREQUENCY 2.0f // скорость появления
+#define FORK_MOVEMENT_SPEED 150.0f // скорость движения
+#define FORK_SPAWN_FREQUENCY 1.5f // частота появления
 
 #define LAND_FILEPATH "Resources/res/Land.png" // нижняя часть экрана игры
 
+#define DUMPLING_FILEPATH "Resources/res/Dumpling.png" // пельмешка
+
+#define DUMPLING_STATE_STILL 1
+#define DUMPLING_STATE_FALLING 2  //состояния пельмешки
+#define DUMPLING_STATE_FLYING 3
+
+#define GRAVITY 250.0f
+#define FLYING_SPEED 250.0f //скорость полета
+#define FLYING_DURATION 0.2f //продолжительность полета
+
+enum GameStates {
+	eReady,
+	ePlaying,
+	eGameOver
+	
+};

@@ -75,6 +75,12 @@
     <ClCompile Include="Land.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Dumpling.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameOverState.hpp">
@@ -112,6 +118,12 @@
     </ClInclude>
     <ClInclude Include="Land.hpp">
       <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Dumpling.hpp">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.hpp">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

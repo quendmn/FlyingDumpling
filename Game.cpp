@@ -1,12 +1,16 @@
 #include "Game.hpp"
 #include "SplashState.hpp"
 #include "DEFINITIONS.hpp"
+#include <stdlib.h>
+#include <time.h>
 
 namespace Dumpling
 {
 	//создание окна
 	Game::Game(int width, int height, std::string title)
 	{
+		srand(time(NULL));
+
 		data_->window.create(sf::VideoMode(width, height), title, sf::Style::Close | sf::Style::Titlebar);
 		data_->machine.AddState(StateRef(new SplashState(this->data_)));
 

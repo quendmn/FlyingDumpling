@@ -1,14 +1,20 @@
 #include "Fork.hpp"
 namespace Dumpling
 {
-	Fork::Fork(GameDataRef data) : data_(data) {}
+	Fork::Fork(GameDataRef data) : data_(data) {
+	
+		landHeight_ = data->assets.GetTexture("Land").getSize().y;
+
+		forkSpawnYOffset_ = 0;
+	}
 
 	// сгенерировать нижнюю вилку
 	void Fork::SpawnBottomFork()
 	{
 		sf::Sprite sprite(this->data_->assets.GetTexture("Fork Up Texture"));
 
-		sprite.setPosition(this->data_->window.getSize().x, 357);
+		sprite.setPosition(data_->window.getSize().x, data_->window.getSize().y -
+			sprite.getGlobalBounds().height - forkSpawnYOffset_);
 
 		forkSprites_.push_back(sprite);
 	}
@@ -18,7 +24,7 @@ namespace Dumpling
 	{
 		sf::Sprite sprite(this->data_->assets.GetTexture("Fork Down Texture"));
 
-		sprite.setPosition(this->data_->window.getSize().x, 0);
+		sprite.setPosition(this->data_->window.getSize().x, -forkSpawnYOffset_);
 
 		forkSprites_.push_back(sprite);
 	}
@@ -63,5 +69,15 @@ namespace Dumpling
 			this->data_->window.draw(forkSprites_.at(i));
 		}
 	}
+
+	// рандомное появление вилок на карте
+	void Fork::RandomiseForkOffset()
+	{
+		//forkSpawnYOffset_ = rand() % (landHeight_ + 1) + 357;
+		forkSpawnYOffset_ = rand() % (landHeight_ + 1);
+	}
+
+
+
 
 }

@@ -18,11 +18,16 @@ namespace Dumpling
 		this->data_->assets.LoadTexture("Fork Up Texture", FORK_UP_FILEPATH);
 		this->data_->assets.LoadTexture("Fork Down Texture", FORK_DOWN_FILEPATH);
 		this->data_->assets.LoadTexture("Land", LAND_FILEPATH);
+		this->data_->assets.LoadTexture("Dumpling", DUMPLING_FILEPATH);
+
 
 		fork = new Fork(data_);
 		land = new Land(data_);
+		dumpling = new Dumpling(data_);
+
 		background_.setTexture(this->data_->assets.GetTexture("Game Background"));
 
+		gameState_ = GameStates::eReady;
 	}
 
 	//обработка действий 
@@ -41,7 +46,12 @@ namespace Dumpling
 			if (this->data_->input.IsSpriteClicked(this->background_,
 				sf::Mouse::Left, this->data_->window))
 			{
-				
+				if (GameStates::eGameOver != gameState_)
+				{
+					gameState_ = GameStates::ePlaying;
+					dumpling->Tap();
+				}
+					
 			}
 
 		}
@@ -50,18 +60,35 @@ namespace Dumpling
 	// обновление
 	void GameState::Update(float dt)
 	{
-		fork->MoveForks(dt);
-		land->MoveLand(dt);
-
-		if (clock_.getElapsedTime().asSeconds() > FORK_SPAWN_FREQUENCY)
+		if (GameStates::eGameOver != gameState_)
 		{
-			fork->SpawnBottomFork();
-			fork->SpawnTopFork();
-			fork->SpawnInvisibleFork();
+			land->MoveLand(dt);
+		}
+		if (GameStates::ePlaying == gameState_)
+		{
+			fork->MoveForks(dt);
 
-			
+			if (clock_.getElapsedTime().asSeconds() > FORK_SPAWN_FREQUENCY)
+			{
+				fork->RandomiseForkOffset();
 
-			clock_.restart();
+				fork->SpawnBottomFork();
+				fork->SpawnTopFork();
+				fork->SpawnInvisibleFork();
+
+				clock_.restart();
+			}
+
+			dumpling->Update(dt);
+
+			std::vector<sf::Sprite> landSprites = land->GetSprites();
+			for (int i = 0; i < landSprites.size(); i++)
+			{
+				if (collision.CheckSpriteCollision(dumpling->GetSprite(), landSprites.at(i)))
+				{
+					gameState_ = GameStates::eGameOver;
+				}
+			}
 		}
 	}
 
@@ -73,6 +100,7 @@ namespace Dumpling
 		this->data_->window.draw(this->background_);
 		fork->DrawForks();
 		land->DrawLand();
+		dumpling->Draw();
 
 		this->data_->window.display();
 	}

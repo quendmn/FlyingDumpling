@@ -40,4 +40,11 @@ namespace Dumpling
 			this->data_->window.draw(landSprites_.at(i));
 		}
 	}
+
+	const std::vector<sf::Sprite>& Land::GetSprites() const {
+		return landSprites_;
+	}
+
+
+
 }

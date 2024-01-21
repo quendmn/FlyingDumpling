@@ -5,6 +5,8 @@
 #include "Game.hpp"
 #include "Fork.hpp"
 #include "Land.hpp"
+#include "Dumpling.hpp"
+#include "Collision.hpp"
 
 namespace Dumpling
 {
@@ -29,6 +31,12 @@ namespace Dumpling
 		Fork* fork;
 
 		Land* land;
+
+		Dumpling* dumpling;
+
+		Collision collision;
+
+		int gameState_;
 
 	};
 }

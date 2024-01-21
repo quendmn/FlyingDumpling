@@ -136,6 +136,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AssetManager.cpp" />
+    <ClCompile Include="Collision.cpp" />
+    <ClCompile Include="Dumpling.cpp" />
     <ClCompile Include="Fork.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameOverState.cpp" />
@@ -149,7 +151,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AssetManager.hpp" />
+    <ClInclude Include="Collision.hpp" />
     <ClInclude Include="DEFINITIONS.hpp" />
+    <ClInclude Include="Dumpling.hpp" />
     <ClInclude Include="Fork.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="GameOverState.hpp" />
