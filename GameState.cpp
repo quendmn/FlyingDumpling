@@ -24,6 +24,7 @@ namespace Dumpling
 		fork = new Fork(data_);
 		land = new Land(data_);
 		dumpling = new Dumpling(data_);
+		flash = new Flash(data_);
 
 		background_.setTexture(this->data_->assets.GetTexture("Game Background"));
 
@@ -84,12 +85,28 @@ namespace Dumpling
 			std::vector<sf::Sprite> landSprites = land->GetSprites();
 			for (int i = 0; i < landSprites.size(); i++)
 			{
-				if (collision.CheckSpriteCollision(dumpling->GetSprite(), landSprites.at(i)))
+				if (collision.CheckSpriteCollision(dumpling->GetSprite(), landSprites.at(i) ))
 				{
 					gameState_ = GameStates::eGameOver;
 				}
 			}
+
+			std::vector<sf::Sprite> forkSprites = fork->GetSprites();
+			for (int i = 0; i < forkSprites.size(); i++)
+			{
+				if (collision.CheckSpriteCollision(dumpling->GetSprite(), 0.625f, forkSprites.at(i), 0.85f))
+				{
+					gameState_ = GameStates::eGameOver;
+				}
+			}
+
+
 		}
+
+		if (GameStates::eGameOver == gameState_) {
+			flash->Show(dt);
+		}
+
 	}
 
 	// отрисовка
@@ -101,6 +118,7 @@ namespace Dumpling
 		fork->DrawForks();
 		land->DrawLand();
 		dumpling->Draw();
+		flash->Draw();
 
 		this->data_->window.display();
 	}

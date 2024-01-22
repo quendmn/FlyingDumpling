@@ -13,33 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Исходные файлы\AssetManager">
-      <UniqueIdentifier>{c2f38026-774b-4e3a-ab06-bca1f82f12be}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Fork">
-      <UniqueIdentifier>{3aa76ad7-4f57-4f06-a167-0247edd5421a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Game">
-      <UniqueIdentifier>{152ef5b8-7986-46fc-b3fd-fe9ff380c554}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\States">
-      <UniqueIdentifier>{81c4465f-c9d0-4023-9893-cece1d528d9c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\InputManager">
-      <UniqueIdentifier>{077d6a5c-40ae-40a4-a407-0c2437c932d5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\StateMachine">
-      <UniqueIdentifier>{4ce2f592-8cc9-49c2-97b9-2ec5af6edd1c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Main">
-      <UniqueIdentifier>{3a32e861-9e2a-493f-b44e-30bd445aa687}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\DEFINITIONS">
-      <UniqueIdentifier>{18b0a65a-f802-4e6c-ab4c-21525471e6e3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Land">
-      <UniqueIdentifier>{00424e10-496b-4815-a843-677017442508}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameOverState.cpp">
@@ -81,48 +54,54 @@
     <ClCompile Include="Collision.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Flash.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameOverState.hpp">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="GameState.hpp">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="MainMenuState.hpp">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="SplashState.hpp">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="State.hpp">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="StateMachine.hpp">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="InputManager.hpp">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.hpp">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="Fork.hpp">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="DEFINITIONS.hpp">
-      <Filter>Исходные файлы</Filter>
+    <ClInclude Include="Collision.hpp">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="AssetManager.hpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Land.hpp">
-      <Filter>Исходные файлы</Filter>
+    <ClInclude Include="DEFINITIONS.hpp">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Dumpling.hpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Collision.hpp">
+    <ClInclude Include="Fork.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOverState.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Land.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuState.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="SplashState.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="StateMachine.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash.hpp">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

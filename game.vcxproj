@@ -138,6 +138,7 @@
     <ClCompile Include="AssetManager.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="Dumpling.cpp" />
+    <ClCompile Include="Flash.cpp" />
     <ClCompile Include="Fork.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameOverState.cpp" />
@@ -154,6 +155,7 @@
     <ClInclude Include="Collision.hpp" />
     <ClInclude Include="DEFINITIONS.hpp" />
     <ClInclude Include="Dumpling.hpp" />
+    <ClInclude Include="Flash.hpp" />
     <ClInclude Include="Fork.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="GameOverState.hpp" />

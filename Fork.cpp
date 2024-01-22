@@ -40,6 +40,18 @@ namespace Dumpling
 		forkSprites_.push_back(sprite);
 	}
 
+	// сгенерировать прозрачную вилку
+	void Fork::SpawnScoringFork()
+	{
+		sf::Sprite sprite(this->data_->assets.GetTexture("Fork Down Texture"));
+
+		sprite.setPosition(this->data_->window.getSize().x, 0);
+		sprite.setColor(sf::Color(0, 0, 0, 0));
+
+		forkSprites_.push_back(sprite);
+	}
+
+
 	// движение вилок на экране
 	void Fork::MoveForks(float dt)
 	{
@@ -77,7 +89,9 @@ namespace Dumpling
 		forkSpawnYOffset_ = rand() % (landHeight_ + 1);
 	}
 
-
-
+	// для столкновения с вилками
+	const std::vector<sf::Sprite>& Fork::GetSprites() const {
+		return forkSprites_;
+	}
 
 }

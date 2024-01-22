@@ -7,6 +7,7 @@
 #include "Land.hpp"
 #include "Dumpling.hpp"
 #include "Collision.hpp"
+#include "Flash.hpp"
 
 namespace Dumpling
 {
@@ -24,17 +25,14 @@ namespace Dumpling
 	private:
 		GameDataRef data_;
 
-		sf::Sprite background_;
-		
+		sf::Sprite background_;		
 		sf::Clock clock_;
 
 		Fork* fork;
-
 		Land* land;
-
 		Dumpling* dumpling;
-
 		Collision collision;
+		Flash* flash;
 
 		int gameState_;
 
