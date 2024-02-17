@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "State.hpp"
 #include "Game.hpp"
 
@@ -23,5 +24,17 @@ namespace Dumpling
 		sf::Sprite background_;
 		sf::Sprite title_;
 		sf::Sprite playButton_;
+
+		sf::SoundBuffer hitBuffer_;
+		sf::SoundBuffer pointBuffer_;
+		sf::SoundBuffer wingBuffer_;
+		sf::SoundBuffer musicBuffer_;
+
+		sf::Sound hitSound_;
+		sf::Sound pointSound_;
+		sf::Sound wingSound_;
+		sf::Sound musicSound_;
+
+
 	};
 }

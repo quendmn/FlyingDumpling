@@ -53,3 +53,9 @@ enum GameStates {
 #define BRONZE_MEDAL_SCORE 0
 #define SILVER_MEDAL_SCORE 5
 #define GOLDEN_MEDAL_SCORE 15
+
+#define HIT_SOUND_FILEPATH "Resources/sounds/hit2.mp3"
+#define POINT_SOUND_FILEPATH "Resources/sounds/point.wav"
+#define WING_SOUND_FILEPATH "Resources/sounds/wing.wav"
+#define CLICK_SOUND_FILEPATH "Resources/sounds/click.ogg"
+#define MUSIC_FILEPATH "Resources/sounds/music.mp3"

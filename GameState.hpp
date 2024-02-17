@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "State.hpp"
 #include "Game.hpp"
 #include "Fork.hpp"
@@ -44,5 +45,13 @@ namespace Dumpling
 
 		int score_;
 
+		sf::SoundBuffer hitBuffer_;
+		sf::SoundBuffer pointBuffer_;
+		sf::SoundBuffer wingBuffer_;
+
+		sf::Sound hitSound_;
+		sf::Sound pointSound_;
+		sf::Sound wingSound_;
+		
 	};
 }

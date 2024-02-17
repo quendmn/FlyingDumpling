@@ -23,6 +23,26 @@ namespace Dumpling
 		this->data_->assets.LoadTexture("Scoring Fork", SCORING_FORK_FILEPATH);
 		this->data_->assets.LoadFont("Flappy Font", FLAPPY_FONT_FILEPATH);
 
+		if (!hitBuffer_.loadFromFile(HIT_SOUND_FILEPATH)) {
+			std::cerr << "Oops :(";
+		}
+		if (!pointBuffer_.loadFromFile(POINT_SOUND_FILEPATH)) {
+			std::cerr << "Oops :(";
+		}
+		if (!wingBuffer_.loadFromFile(CLICK_SOUND_FILEPATH)) {
+			std::cerr << "Oops :(";
+		}
+
+		hitSound_.setBuffer(hitBuffer_);
+		hitSound_.setVolume(45.f);
+
+		pointSound_.setBuffer(pointBuffer_);
+		pointSound_.setVolume(45.f);
+
+		wingSound_.setBuffer(wingBuffer_);
+		wingSound_.setVolume(45.f);
+
+
 		fork = new Fork(data_);
 		land = new Land(data_);
 		dumpling = new Dumpling(data_);
@@ -54,21 +74,29 @@ namespace Dumpling
 				{
 					gameState_ = GameStates::ePlaying;
 					dumpling->Tap();
+
+					wingSound_.play();
 				}
+
+				if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+					wingSound_.play();
+				}
+
 			}
 		}
 	}
 
 	void GameState::Update(float dt)
 	{
+
 		if (GameStates::eGameOver != gameState_)
 		{
-			
 			land->MoveLand(dt);
 		}
 
 		if (GameStates::ePlaying == gameState_)
 		{
+			
 			fork->MoveForks(dt);
 
 			if (clock.getElapsedTime().asSeconds() > FORK_SPAWN_FREQUENCY)
@@ -93,6 +121,8 @@ namespace Dumpling
 				{
 					gameState_ = GameStates::eGameOver;
 					clock.restart();
+
+					hitSound_.play();
 				}
 			}
 
@@ -104,6 +134,7 @@ namespace Dumpling
 				{
 					gameState_ = GameStates::eGameOver;
 					clock.restart();
+					hitSound_.play();
 				}
 			}
 
@@ -120,6 +151,7 @@ namespace Dumpling
 						scores->UpdateScore(score_);
 
 						scoringSprites.erase(scoringSprites.begin() + i);
+						pointSound_.play();
 					}
 				}
 

@@ -15,6 +15,25 @@ namespace Dumpling
 	// инициализация
 	void GameOverState::Init()
 	{
+		if (!hitBuffer_.loadFromFile(HIT_SOUND_FILEPATH)) {
+			std::cerr << "Oops :(";
+		}
+		if (!pointBuffer_.loadFromFile(POINT_SOUND_FILEPATH)) {
+			std::cerr << "Oops :(";
+		}
+		if (!wingBuffer_.loadFromFile(CLICK_SOUND_FILEPATH)) {
+			std::cerr << "Oops :(";
+		}
+
+		hitSound_.setBuffer(hitBuffer_);
+		hitSound_.setVolume(45.f);
+
+		pointSound_.setBuffer(pointBuffer_);
+		pointSound_.setVolume(45.f);
+
+		wingSound_.setBuffer(wingBuffer_);
+		wingSound_.setVolume(45.f);
+
 		std::ifstream read;
 		read.open("Resources/Highscore.txt");
 		if (read.is_open())
@@ -107,6 +126,10 @@ namespace Dumpling
 
 			if (data_->input.IsSpriteClicked(gameOverRetry_, sf::Mouse::Left, data_->window )) {
 				data_->machine.AddState(StateRef(new GameState(data_)), true);
+			}
+
+			if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+				wingSound_.play();
 			}
 		}
 	}
