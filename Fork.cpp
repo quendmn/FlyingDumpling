@@ -11,7 +11,7 @@ namespace Dumpling
 	// сгенерировать нижнюю вилку
 	void Fork::SpawnBottomFork()
 	{
-		sf::Sprite sprite(this->data_->assets.GetTexture("Fork Up Texture"));
+		sf::Sprite sprite(this->data_->assets.GetTexture("Fork Up"));
 
 		sprite.setPosition(data_->window.getSize().x, data_->window.getSize().y -
 			sprite.getGlobalBounds().height - forkSpawnYOffset_);
@@ -22,7 +22,7 @@ namespace Dumpling
 	// сгенерировать верхнюю вилку
 	void Fork::SpawnTopFork()
 	{
-		sf::Sprite sprite(this->data_->assets.GetTexture("Fork Down Texture"));
+		sf::Sprite sprite(this->data_->assets.GetTexture("Fork Down"));
 
 		sprite.setPosition(this->data_->window.getSize().x, -forkSpawnYOffset_);
 
@@ -32,9 +32,9 @@ namespace Dumpling
 	// сгенерировать прозрачную вилку
 	void Fork::SpawnInvisibleFork()
 	{
-		sf::Sprite sprite(this->data_->assets.GetTexture("Fork Down Texture"));
+		sf::Sprite sprite(this->data_->assets.GetTexture("Fork Down"));
 
-		sprite.setPosition(this->data_->window.getSize().x, 0);
+		sprite.setPosition(this->data_->window.getSize().x, -forkSpawnYOffset_);
 		sprite.setColor(sf::Color(0, 0, 0, 0));
 
 		forkSprites_.push_back(sprite);
@@ -43,12 +43,11 @@ namespace Dumpling
 	// сгенерировать прозрачную вилку
 	void Fork::SpawnScoringFork()
 	{
-		sf::Sprite sprite(this->data_->assets.GetTexture("Fork Down Texture"));
+		sf::Sprite sprite(this->data_->assets.GetTexture("Scoring Fork"));
 
 		sprite.setPosition(this->data_->window.getSize().x, 0);
-		sprite.setColor(sf::Color(0, 0, 0, 0));
-
-		forkSprites_.push_back(sprite);
+		
+		scoringForks_.push_back(sprite);
 	}
 
 
@@ -70,6 +69,23 @@ namespace Dumpling
 			}
 
 		}
+
+		for (unsigned short int i = 0; i < scoringForks_.size(); i++)
+		{
+			if (scoringForks_.at(i).getPosition().x < 0 -
+				scoringForks_.at(i).getGlobalBounds().width)
+			{
+				scoringForks_.erase(scoringForks_.begin() + i);
+			}
+			else {
+
+				float movement = FORK_MOVEMENT_SPEED * dt;
+
+				scoringForks_.at(i).move(-movement, 0);
+			}
+
+		}
+
 	}
 
 
@@ -92,6 +108,10 @@ namespace Dumpling
 	// для столкновения с вилками
 	const std::vector<sf::Sprite>& Fork::GetSprites() const {
 		return forkSprites_;
+	}
+
+	std::vector<sf::Sprite>& Fork::GetScoringSprites()  {
+		return scoringForks_;
 	}
 
 }

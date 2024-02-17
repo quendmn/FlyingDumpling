@@ -21,5 +21,10 @@ namespace Dumpling
 		GameDataRef data_;
 
 		sf::Sprite background_;
+
+		sf::Sprite gameOverTitle_;
+		sf::Sprite gameOverBody_;
+		sf::Sprite gameOverRetry_;
+		
 	};
 }

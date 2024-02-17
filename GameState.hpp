@@ -8,6 +8,7 @@
 #include "Dumpling.hpp"
 #include "Collision.hpp"
 #include "Flash.hpp"
+#include "Scores.hpp"
 
 namespace Dumpling
 {
@@ -25,16 +26,23 @@ namespace Dumpling
 	private:
 		GameDataRef data_;
 
-		sf::Sprite background_;		
-		sf::Clock clock_;
+		sf::Sprite background_;
 
 		Fork* fork;
 		Land* land;
 		Dumpling* dumpling;
 		Collision collision;
 		Flash* flash;
+		Scores* scores;
+
+		sf::Clock clock;
 
 		int gameState_;
+
+		sf::RectangleShape gameOverFlash_;
+		bool flashOn_;
+
+		int score_;
 
 	};
 }

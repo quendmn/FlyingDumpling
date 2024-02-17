@@ -16,6 +16,7 @@
 
 #define FORK_UP_FILEPATH "Resources/res/ForkUp.png"// вилка вверх
 #define FORK_DOWN_FILEPATH "Resources/res/ForkDown.png" // вилка вниз
+#define SCORING_FORK_FILEPATH "Resources/res/InvisibleScoringFork.png" // вилка вниз
 #define FORK_MOVEMENT_SPEED 150.0f // скорость движения
 #define FORK_SPAWN_FREQUENCY 2.0f // частота появления
 
@@ -26,6 +27,11 @@
 #define DUMPLING_STATE_STILL 1
 #define DUMPLING_STATE_FALLING 2  //состояния пельмешки
 #define DUMPLING_STATE_FLYING 3
+
+#define FLAPPY_FONT_FILEPATH "Resources/fonts/FlappyFont.ttf"
+#define GAME_OVER_TITLE_FILEPATH "Resources/res/Game-Over-Title.png"
+#define GAME_OVER_BODY_FILEPATH "Resources/res/Game-Over-Body.png"
+#define GAME_OVER_RETRY_FILEPATH "Resources/res/PlayButton.png"
 
 #define GRAVITY 250.0f
 #define FLYING_SPEED 250.0f //скорость полета
@@ -39,3 +45,4 @@ enum GameStates {
 };
 
 #define FLASH_SPEED 1500.0f
+#define TIME_BEFORE_GAMEOVER_APPEARS 1.5f
