@@ -32,6 +32,9 @@
 #define GAME_OVER_TITLE_FILEPATH "Resources/res/Game-Over-Title.png"
 #define GAME_OVER_BODY_FILEPATH "Resources/res/Game-Over-Body.png"
 #define GAME_OVER_RETRY_FILEPATH "Resources/res/PlayButton.png"
+#define GOLDEN_MEDAL_FILEPATH "Resources/res/GoldenMedal.png"
+#define BRONZE_MEDAL_FILEPATH "Resources/res/BronzeMedal.png"
+#define SILVER_MEDAL_FILEPATH "Resources/res/SilverMedal.png"
 
 #define GRAVITY 250.0f
 #define FLYING_SPEED 250.0f //скорость полета
@@ -46,3 +49,7 @@ enum GameStates {
 
 #define FLASH_SPEED 1500.0f
 #define TIME_BEFORE_GAMEOVER_APPEARS 1.5f
+
+#define BRONZE_MEDAL_SCORE 0
+#define SILVER_MEDAL_SCORE 5
+#define GOLDEN_MEDAL_SCORE 15

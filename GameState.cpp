@@ -131,7 +131,7 @@ namespace Dumpling
 			flash->Show(dt);
 
 			if (clock.getElapsedTime().asSeconds() > TIME_BEFORE_GAMEOVER_APPEARS) {
-				data_->machine.AddState(StateRef(new GameOverState(data_)), true);
+				data_->machine.AddState(StateRef(new GameOverState(data_, score_)), true);
 			}
 		}
 

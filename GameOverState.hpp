@@ -9,7 +9,7 @@ namespace Dumpling
 	class GameOverState : public State
 	{
 	public:
-		GameOverState(GameDataRef data);
+		GameOverState(GameDataRef data, int score);
 
 		void Init();
 
@@ -25,6 +25,13 @@ namespace Dumpling
 		sf::Sprite gameOverTitle_;
 		sf::Sprite gameOverBody_;
 		sf::Sprite gameOverRetry_;
-		
+		sf::Sprite medal_;
+
+
+		sf::Text scoreText_;
+		sf::Text highScoreText_;
+
+		int score_;
+		int highScore_;
 	};
 }
